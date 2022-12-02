@@ -1,0 +1,48 @@
+import sys
+import time
+def log(message, wait=0.04, delay=0.6, newline=True):
+  # For each character in the message
+  for i in message:
+    # Write the character
+    sys.stdout.write(i)
+    # Make the character show in console
+    sys.stdout.flush()
+    # Pause delays
+    time.sleep(delay if i == "\n" else wait)
+    time.sleep(wait*4-wait**2 if i == "," else 0)
+    time.sleep(wait*5-wait**2 if i == "." else 0)
+  # Reset ANSI style, and add \n if newline
+  sys.stdout.write("\001\033[0m\002\n" if newline else "\001\033[0m\002")
+
+log("Hi, typewriting effects are cool, especially for text-based apps and games...")
+
+log("But.\n",0.3,0)
+
+log("I've always wondered if I could find out an algorithm (equation) for calculating the exact amount of time needed to make each sentence most easy to read.")
+
+log("It wasn't easy...")
+
+log("\nBut, hey, I finally did it!")
+
+input("\nWanna see? > ")
+
+print('\001\033[H\033[J\002The function is as follows:\n\001\033[2m\002')
+print(r'def log(message, wait=0.04, delay=0.2, newline=True):')
+print(r'  # For each character in the message')
+print(r'  for i in message:')
+print(r'    # Pause delays')
+print(r'    time.sleep(delay if i == "\n" else wait)')
+print(r'    time.sleep(wait*2-wait**2 if i == "," else 0)')
+print(r'    time.sleep(wait*3-wait**2 if i == "." else 0)')
+print(r'    # Write the character')
+print(r'    sys.stdout.write(i)')
+print(r'    # Make the character show in console')
+print(r'    sys.stdout.flush()')
+print(r'  # Reset ANSI style, and add \n if newline')
+print(r'  sys.stdout.write("\001\033[0m\002\n" if newline else "\001\033[0m\002")')
+
+input("\001\033[0m\002\nCopy the above function down! Done? > ")
+
+log("\001\033[H\033[J\002Extra features:\n∙ Works with ANSI codes.\n∙ Supports unicode characters.")
+
+print("\n\nSee README.md for full documentation!")
