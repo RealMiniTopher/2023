@@ -52,4 +52,4 @@ def sprint(str):
      sys.stdout.flush()
      time.sleep(1./5)
 
-sprint('Just kidding.. I wasn't listening.')
+sprint('Just kidding.. I wasnt listening')
